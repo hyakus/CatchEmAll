@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, PokePIDelegate
+class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, PokePIDelegate
 {
     
     @IBOutlet weak var collectionView: UICollectionView?
@@ -83,6 +83,24 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        let cell = collectionView.cellForItem(at: indexPath) as? PokecollectionViewCell
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main",
+                                                    bundle: nil)
+        
+        let moreInfoVC = storyBoard.instantiateViewController(withIdentifier: "moreInfoViewController") as? MoreInfoViewController
+        
+        moreInfoVC?.set(poke: cell?.poke)
+        let transitionDelegate = SmallAlertTransitioningDelegate()
+        moreInfoVC?.transitioningDelegate = transitionDelegate
+        moreInfoVC?.modalPresentationStyle = .custom
+        self.present(moreInfoVC!, animated: true, completion: nil)
+//        present fun and cool popover UI with cell?.poke
     }
 
     // UICollectionViewDelegateFlowLayout //

@@ -5,7 +5,7 @@
 //  Created by Bryan on 02/12/2020.
 //
 
-import Foundation
+import UIKit
 
 class AbilityGroup: Codable
 {
@@ -14,10 +14,22 @@ class AbilityGroup: Codable
     var slot: Int
     
     
-    // TODO: https://stackoverflow.com/questions/44655562/how-to-exclude-properties-from-swift-4s-codable
-    //    Decode/ encode inits to include/excute keys as required
     private enum CodingKeys : String, CodingKey {
         case ability, isHidden = "is_hidden", slot
     }
     
+    public func name() -> String
+    {
+        return ability.name
+    }
+    
+    public func getView(viewController: UIViewController) -> AbilityView
+    {
+        let abilityView = (Bundle.main.loadNibNamed("AbilityView",
+                                                    owner: viewController,
+                                                    options: nil)![0] as? AbilityView)!
+        
+        abilityView.update(abilityGroup: self)
+        return abilityView
+    }
 }

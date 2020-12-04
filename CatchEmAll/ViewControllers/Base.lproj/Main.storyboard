@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CatchEmAll" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="CatchEmAll" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,6 +58,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="89"/>
+        </scene>
+        <!--More Info View Controller-->
+        <scene sceneID="S1x-pA-Vsb">
+            <objects>
+                <viewController storyboardIdentifier="moreInfoViewController" id="3DE-Em-rl5" customClass="MoreInfoViewController" customModule="CatchEmAll" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DC1-Wq-iAk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Dxo-Ii-SnF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bqY-Z9-y0R">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1gp-k9-UgZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Dxo-Ii-SnF" firstAttribute="top" secondItem="1gp-k9-UgZ" secondAttribute="top" id="0ys-qS-Hj6"/>
+                            <constraint firstItem="1gp-k9-UgZ" firstAttribute="trailing" secondItem="Dxo-Ii-SnF" secondAttribute="trailing" id="Q6s-20-ByV"/>
+                            <constraint firstItem="1gp-k9-UgZ" firstAttribute="bottom" secondItem="Dxo-Ii-SnF" secondAttribute="bottom" id="so5-8w-r3O"/>
+                            <constraint firstItem="Dxo-Ii-SnF" firstAttribute="leading" secondItem="1gp-k9-UgZ" secondAttribute="leading" id="tDx-Sp-8Nx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailsStackView" destination="Dxo-Ii-SnF" id="qdO-E1-gXw"/>
+                        <outlet property="imageView" destination="bqY-Z9-y0R" id="AX1-wg-cfk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ves-Xc-eNM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1099" y="88"/>
         </scene>
     </scenes>
     <resources>

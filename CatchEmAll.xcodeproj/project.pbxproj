@@ -10,7 +10,7 @@
 		9316162A257976580052A9C0 /* PokePIRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93161629257976580052A9C0 /* PokePIRequestHandler.swift */; };
 		9318690125781D0A00EAA364 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9318690025781D0A00EAA364 /* AppDelegate.swift */; };
 		9318690325781D0A00EAA364 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9318690225781D0A00EAA364 /* SceneDelegate.swift */; };
-		9318690525781D0A00EAA364 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9318690425781D0A00EAA364 /* ViewController.swift */; };
+		9318690525781D0A00EAA364 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9318690425781D0A00EAA364 /* MainViewController.swift */; };
 		9318690825781D0A00EAA364 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9318690625781D0A00EAA364 /* Main.storyboard */; };
 		9318690B25781D0A00EAA364 /* CatchEmAll.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9318690925781D0A00EAA364 /* CatchEmAll.xcdatamodeld */; };
 		9318690D25781D0B00EAA364 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9318690C25781D0B00EAA364 /* Assets.xcassets */; };
@@ -29,6 +29,16 @@
 		931869932578398C00EAA364 /* PokeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 931869922578398C00EAA364 /* PokeCollectionViewCell.xib */; };
 		93211CA1257A90DB0095A566 /* MoveGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93211CA0257A90DB0095A566 /* MoveGroup.swift */; };
 		93211CA9257A912E0095A566 /* VersionGroupDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93211CA8257A912E0095A566 /* VersionGroupDetails.swift */; };
+		93397025257AB2E900959F6B /* DimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93397024257AB2E900959F6B /* DimView.swift */; };
+		9339702A257AB35B00959F6B /* DimView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93397029257AB35B00959F6B /* DimView.xib */; };
+		93397038257AC6BB00959F6B /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93397037257AC6BB00959F6B /* MoreInfoViewController.swift */; };
+		93397040257AC7AB00959F6B /* SmallAlertTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9339703F257AC7AB00959F6B /* SmallAlertTransitioningDelegate.swift */; };
+		93397046257AC82200959F6B /* SmallAlertPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93397044257AC82200959F6B /* SmallAlertPresentationController.swift */; };
+		93397047257AC82200959F6B /* SmallAlertPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93397045257AC82200959F6B /* SmallAlertPresentationAnimator.swift */; };
+		93397050257ACDFD00959F6B /* AbilityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9339704E257ACDFD00959F6B /* AbilityView.xib */; };
+		93397051257ACDFD00959F6B /* AbilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9339704F257ACDFD00959F6B /* AbilityView.swift */; };
+		93397063257AD43C00959F6B /* MoveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93397061257AD43C00959F6B /* MoveView.xib */; };
+		93397064257AD43C00959F6B /* MoveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93397062257AD43C00959F6B /* MoveView.swift */; };
 		93F72D7A257990E60061F848 /* PokeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F72D79257990E60061F848 /* PokeResponse.swift */; };
 		93F72D85257998170061F848 /* HeldItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F72D84257998170061F848 /* HeldItem.swift */; };
 		93F72D8A2579984A0061F848 /* VersionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F72D892579984A0061F848 /* VersionDetails.swift */; };
@@ -56,7 +66,7 @@
 		931868FD25781D0A00EAA364 /* CatchEmAll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatchEmAll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9318690025781D0A00EAA364 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9318690225781D0A00EAA364 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9318690425781D0A00EAA364 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9318690425781D0A00EAA364 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9318690725781D0A00EAA364 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9318690A25781D0A00EAA364 /* CatchEmAll.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CatchEmAll.xcdatamodel; sourceTree = "<group>"; };
 		9318690C25781D0B00EAA364 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,6 +90,16 @@
 		931869922578398C00EAA364 /* PokeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokeCollectionViewCell.xib; sourceTree = "<group>"; };
 		93211CA0257A90DB0095A566 /* MoveGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveGroup.swift; sourceTree = "<group>"; };
 		93211CA8257A912E0095A566 /* VersionGroupDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionGroupDetails.swift; sourceTree = "<group>"; };
+		93397024257AB2E900959F6B /* DimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimView.swift; sourceTree = "<group>"; };
+		93397029257AB35B00959F6B /* DimView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DimView.xib; sourceTree = "<group>"; };
+		93397037257AC6BB00959F6B /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
+		9339703F257AC7AB00959F6B /* SmallAlertTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallAlertTransitioningDelegate.swift; sourceTree = "<group>"; };
+		93397044257AC82200959F6B /* SmallAlertPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallAlertPresentationController.swift; sourceTree = "<group>"; };
+		93397045257AC82200959F6B /* SmallAlertPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallAlertPresentationAnimator.swift; sourceTree = "<group>"; };
+		9339704E257ACDFD00959F6B /* AbilityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AbilityView.xib; sourceTree = "<group>"; };
+		9339704F257ACDFD00959F6B /* AbilityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityView.swift; sourceTree = "<group>"; };
+		93397061257AD43C00959F6B /* MoveView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoveView.xib; sourceTree = "<group>"; };
+		93397062257AD43C00959F6B /* MoveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveView.swift; sourceTree = "<group>"; };
 		93F72D79257990E60061F848 /* PokeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeResponse.swift; sourceTree = "<group>"; };
 		93F72D84257998170061F848 /* HeldItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeldItem.swift; sourceTree = "<group>"; };
 		93F72D892579984A0061F848 /* VersionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionDetails.swift; sourceTree = "<group>"; };
@@ -138,8 +158,6 @@
 				9318693625781D9C00EAA364 /* ViewControllers */,
 				9318690025781D0A00EAA364 /* AppDelegate.swift */,
 				9318690225781D0A00EAA364 /* SceneDelegate.swift */,
-				9318690425781D0A00EAA364 /* ViewController.swift */,
-				9318690625781D0A00EAA364 /* Main.storyboard */,
 				9318690C25781D0B00EAA364 /* Assets.xcassets */,
 				9318690E25781D0B00EAA364 /* LaunchScreen.storyboard */,
 				9318691125781D0B00EAA364 /* Info.plist */,
@@ -170,6 +188,9 @@
 		9318693625781D9C00EAA364 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9318690425781D0A00EAA364 /* MainViewController.swift */,
+				93397037257AC6BB00959F6B /* MoreInfoViewController.swift */,
+				9318690625781D0A00EAA364 /* Main.storyboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -197,8 +218,17 @@
 		9318693825781DAD00EAA364 /* Subclasses */ = {
 			isa = PBXGroup;
 			children = (
+				93397045257AC82200959F6B /* SmallAlertPresentationAnimator.swift */,
+				93397044257AC82200959F6B /* SmallAlertPresentationController.swift */,
+				9339703F257AC7AB00959F6B /* SmallAlertTransitioningDelegate.swift */,
 				9318698D2578393300EAA364 /* PokeCollectionViewCell.swift */,
 				931869922578398C00EAA364 /* PokeCollectionViewCell.xib */,
+				9339704F257ACDFD00959F6B /* AbilityView.swift */,
+				9339704E257ACDFD00959F6B /* AbilityView.xib */,
+				93397062257AD43C00959F6B /* MoveView.swift */,
+				93397061257AD43C00959F6B /* MoveView.xib */,
+				93397024257AB2E900959F6B /* DimView.swift */,
+				93397029257AB35B00959F6B /* DimView.xib */,
 			);
 			path = Subclasses;
 			sourceTree = "<group>";
@@ -309,7 +339,10 @@
 				9318691025781D0B00EAA364 /* LaunchScreen.storyboard in Resources */,
 				931869932578398C00EAA364 /* PokeCollectionViewCell.xib in Resources */,
 				9318690D25781D0B00EAA364 /* Assets.xcassets in Resources */,
+				9339702A257AB35B00959F6B /* DimView.xib in Resources */,
 				9318690825781D0A00EAA364 /* Main.storyboard in Resources */,
+				93397063257AD43C00959F6B /* MoveView.xib in Resources */,
+				93397050257ACDFD00959F6B /* AbilityView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,19 +370,26 @@
 				9316162A257976580052A9C0 /* PokePIRequestHandler.swift in Sources */,
 				9318698E2578393300EAA364 /* PokeCollectionViewCell.swift in Sources */,
 				9318693A25781DD500EAA364 /* Pokemon.swift in Sources */,
+				93397038257AC6BB00959F6B /* MoreInfoViewController.swift in Sources */,
 				9318695E2578244800EAA364 /* Sprite.swift in Sources */,
+				93397040257AC7AB00959F6B /* SmallAlertTransitioningDelegate.swift in Sources */,
 				9318694E257823D800EAA364 /* Encounter.swift in Sources */,
-				9318690525781D0A00EAA364 /* ViewController.swift in Sources */,
+				9318690525781D0A00EAA364 /* MainViewController.swift in Sources */,
 				93F72D85257998170061F848 /* HeldItem.swift in Sources */,
 				93211CA9257A912E0095A566 /* VersionGroupDetails.swift in Sources */,
 				9318697E2578264100EAA364 /* AbilityGroup.swift in Sources */,
+				93397064257AD43C00959F6B /* MoveView.swift in Sources */,
+				93397025257AB2E900959F6B /* DimView.swift in Sources */,
 				9318690B25781D0A00EAA364 /* CatchEmAll.xcdatamodeld in Sources */,
 				9318693F25781E7400EAA364 /* PokeBase.swift in Sources */,
 				931869712578254C00EAA364 /* TypeGroup.swift in Sources */,
+				93397047257AC82200959F6B /* SmallAlertPresentationAnimator.swift in Sources */,
 				93211CA1257A90DB0095A566 /* MoveGroup.swift in Sources */,
 				931869492578236400EAA364 /* GameIndices.swift in Sources */,
 				93F72D8A2579984A0061F848 /* VersionDetails.swift in Sources */,
 				931869632578247700EAA364 /* StatsGroup.swift in Sources */,
+				93397051257ACDFD00959F6B /* AbilityView.swift in Sources */,
+				93397046257AC82200959F6B /* SmallAlertPresentationController.swift in Sources */,
 				9318690125781D0A00EAA364 /* AppDelegate.swift in Sources */,
 				9318690325781D0A00EAA364 /* SceneDelegate.swift in Sources */,
 				93F72D7A257990E60061F848 /* PokeResponse.swift in Sources */,

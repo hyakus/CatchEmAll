@@ -26,7 +26,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.collectionView?.register(nib,
                                       forCellWithReuseIdentifier: "pokeCollectionViewCell")
         self.collectionView?.delegate = self
-        
     }
     
     

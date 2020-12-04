@@ -39,6 +39,8 @@
 		93397051257ACDFD00959F6B /* AbilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9339704F257ACDFD00959F6B /* AbilityView.swift */; };
 		93397063257AD43C00959F6B /* MoveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93397061257AD43C00959F6B /* MoveView.xib */; };
 		93397064257AD43C00959F6B /* MoveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93397062257AD43C00959F6B /* MoveView.swift */; };
+		937C6D0A257ADDE2004FD501 /* MoveCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937C6D09257ADDE2004FD501 /* MoveCollectionViewCell.swift */; };
+		937C6D0F257ADDF3004FD501 /* MoveCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 937C6D0E257ADDF3004FD501 /* MoveCollectionViewCell.xib */; };
 		93F72D7A257990E60061F848 /* PokeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F72D79257990E60061F848 /* PokeResponse.swift */; };
 		93F72D85257998170061F848 /* HeldItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F72D84257998170061F848 /* HeldItem.swift */; };
 		93F72D8A2579984A0061F848 /* VersionDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F72D892579984A0061F848 /* VersionDetails.swift */; };
@@ -100,6 +102,8 @@
 		9339704F257ACDFD00959F6B /* AbilityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityView.swift; sourceTree = "<group>"; };
 		93397061257AD43C00959F6B /* MoveView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoveView.xib; sourceTree = "<group>"; };
 		93397062257AD43C00959F6B /* MoveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveView.swift; sourceTree = "<group>"; };
+		937C6D09257ADDE2004FD501 /* MoveCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveCollectionViewCell.swift; sourceTree = "<group>"; };
+		937C6D0E257ADDF3004FD501 /* MoveCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoveCollectionViewCell.xib; sourceTree = "<group>"; };
 		93F72D79257990E60061F848 /* PokeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeResponse.swift; sourceTree = "<group>"; };
 		93F72D84257998170061F848 /* HeldItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeldItem.swift; sourceTree = "<group>"; };
 		93F72D892579984A0061F848 /* VersionDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionDetails.swift; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 				93397061257AD43C00959F6B /* MoveView.xib */,
 				93397024257AB2E900959F6B /* DimView.swift */,
 				93397029257AB35B00959F6B /* DimView.xib */,
+				937C6D09257ADDE2004FD501 /* MoveCollectionViewCell.swift */,
+				937C6D0E257ADDF3004FD501 /* MoveCollectionViewCell.xib */,
 			);
 			path = Subclasses;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9318691025781D0B00EAA364 /* LaunchScreen.storyboard in Resources */,
+				937C6D0F257ADDF3004FD501 /* MoveCollectionViewCell.xib in Resources */,
 				931869932578398C00EAA364 /* PokeCollectionViewCell.xib in Resources */,
 				9318690D25781D0B00EAA364 /* Assets.xcassets in Resources */,
 				9339702A257AB35B00959F6B /* DimView.xib in Resources */,
@@ -380,6 +387,7 @@
 				9318697E2578264100EAA364 /* AbilityGroup.swift in Sources */,
 				93397064257AD43C00959F6B /* MoveView.swift in Sources */,
 				93397025257AB2E900959F6B /* DimView.swift in Sources */,
+				937C6D0A257ADDE2004FD501 /* MoveCollectionViewCell.swift in Sources */,
 				9318690B25781D0A00EAA364 /* CatchEmAll.xcdatamodeld in Sources */,
 				9318693F25781E7400EAA364 /* PokeBase.swift in Sources */,
 				931869712578254C00EAA364 /* TypeGroup.swift in Sources */,

@@ -7,13 +7,19 @@
 
 import UIKit
 
-class MoreInfoViewController: UIViewController
+class MoreInfoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     @IBOutlet weak var imageView: UIImageView?
-    @IBOutlet weak var detailsStackView: UIStackView?
+    @IBOutlet weak var nameLabel: UILabel?
+    @IBOutlet weak var collectionView: UICollectionView?
+    
+    var poke: Pokemon?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView?.delegate = self
     }
     
     public func set(poke: Pokemon?)
@@ -26,6 +32,7 @@ class MoreInfoViewController: UIViewController
     
     func updateTraits(poke: Pokemon)
     {
+        self.poke = poke
         if(poke.sprites.frontDefault != "")
         {
             let imageUrl = URL(string: poke.sprites.frontDefault)!
@@ -35,34 +42,60 @@ class MoreInfoViewController: UIViewController
             let image = UIImage(data: imageData)
             DispatchQueue.main.async {
                 self.imageView?.image = image
+                self.nameLabel?.text = poke.name.uppercased()
             }
         }
+    }
+    
+    // UICollectionViewDelegate/ DataSource //
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int
+    {
+        return self.poke?.moves.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         
-        for abilityGroup in poke.abilities
+        if(cell.subviews
+            .filter({ ($0 as? UILabel) != nil }).count > 0)
         {
-            DispatchQueue.main.async {
-                let alreadyAdded = self.detailsStackView?.arrangedSubviews
-                    .filter({ ($0 as? AbilityView)?.ability()?.name == abilityGroup.name() }).count ?? 0 > 0
-                
-                if(!alreadyAdded)
-                {
-                    self.detailsStackView?.addArrangedSubview(abilityGroup.getView(viewController: self))
-                }
-            }
+            let label = cell.subviews
+                .filter({ ($0 as? UILabel) != nil }).first as! UILabel
+            
+            label.text = self.poke?.moves[indexPath.row].move.name
+        }
+        else
+        {
+            let label = UILabel(frame: cell.frame)
+            
+            label.text = self.poke?.moves[indexPath.row].move.name
+            cell.addSubview(label)
         }
         
-//        for moveGroup in poke.moves
-//        {
-//            DispatchQueue.main.async {
-//                let alreadyAdded = self.detailsStackView?.arrangedSubviews
-//                    .filter({ ($0 as? MoveView)?.moveGroup?.move.name == moveGroup.move.name }).count ?? 0 > 0
-//                
-//                if(!alreadyAdded)
-//                {
-//                    print("moveCount \(poke.moves.count)")
-//                    self.detailsStackView?.addArrangedSubview(moveGroup.getView(viewController: self))
-//                }
-//            }
-//        }
+        return cell
+    }
+    
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        // TODO: Load move description
+        // move URL > effect entries > effect
+        
+    }
+
+    // UICollectionViewDelegateFlowLayout //
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        return CGSize.init(width: collectionView.frame.width, height: 20)
     }
 }

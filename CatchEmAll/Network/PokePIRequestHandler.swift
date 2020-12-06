@@ -38,15 +38,18 @@ class PokePIRequestHandler: NSObject
     var requestType: RequestType = .none
     var delegate: PokePIDelegate?
     
+    // request list of Pokemon from basic 20 Pokemon list(currently)
     func requestMainList()
     {
-        makeRequest(requestType: .fullList)
+        makeRequest(url: PokePIRequestHandler.listURL,
+                    requestType: .fullList)
     }
     
     // Request is of a URL type
-    func makeRequest(url: String)
+    func makeRequest(url: String,
+                     requestType: RequestType)
     {
-        self.requestType = .url
+        self.requestType = requestType
         let url = URL(string: url)
         var request = URLRequest(url: url!)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -61,20 +64,17 @@ class PokePIRequestHandler: NSObject
             }
             
             if let httpStatus = response as? HTTPURLResponse {
-                print("res a \(httpStatus.statusCode)")
+                print("response status \(httpStatus.statusCode)")
                 if httpStatus.statusCode == 200
                 {
-                    // TODO: Parse JSON using object model
                     let res = String(bytes: data, encoding: .utf8)
-                    print("res \(res ?? "nill")")
+                    print("response as string \(res ?? "nil")")
                     
                     if(res != nil)
                     {
                         self.delegate?.requestSuccess(response: data,
                                                       requestType: self.requestType)
                     }
-//                    let responseJSON: NSDictionary = try JSONSerialization.jsonObject(with: data,
-//                                                                                      options: .allowFragments) as! NSDictionary
                 }
             }
             
@@ -83,45 +83,5 @@ class PokePIRequestHandler: NSObject
         task.resume()
         
     }
-    
-    // request list of Pokemon from basic 20 Pokemon list(currently)
-    func makeRequest(requestType: RequestType)
-    {
-        let url = URL(string: PokePIRequestHandler.listURL)
-        var request = URLRequest(url: url!)
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-            // Connection error
-                print("connection Error")
-                self.requestType = .none
-                return
-            }
-            
-            if let httpStatus = response as? HTTPURLResponse {
-                print("res a \(httpStatus.statusCode)")
-                if httpStatus.statusCode == 200
-                {
-                    // TODO: Parse JSON using object model
-                    let res = String(bytes: data, encoding: .utf8)
-                    print("res \(res ?? "nill")")
-                    
-                    if(res != nil)
-                    {
-                        self.delegate?.requestSuccess(response: data,
-                                                      requestType: requestType)
-                    }
-//                    let responseJSON: NSDictionary = try JSONSerialization.jsonObject(with: data,
-//                                                                                      options: .allowFragments) as! NSDictionary
-                }
-            }
-            
-            self.requestType = .none
-        }
-        task.resume()
-    }
-    
-    
     
 }

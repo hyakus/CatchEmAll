@@ -37,21 +37,6 @@ class MoreInfoViewController: UIViewController, UICollectionViewDelegate, UIColl
                                       forCellWithReuseIdentifier: "moveCollectionViewCell")
         
         self.collectionView?.delegate = self
-        
-        self.imageView?.layer.cornerRadius = 8.0
-        self.imageView?.layer.borderWidth = 1.0
-        self.imageView?.layer.borderColor = UIColor.black.cgColor
-        self.imageView?.clipsToBounds = true
-        
-        self.pickerView?.layer.cornerRadius = 8.0
-        self.pickerView?.layer.borderWidth = 1.0
-        self.pickerView?.layer.borderColor = UIColor.black.cgColor
-        self.pickerView?.clipsToBounds = true
-        
-        self.collectionView?.layer.cornerRadius = 8.0
-        self.collectionView?.layer.borderWidth = 1.0
-        self.collectionView?.layer.borderColor = UIColor.black.cgColor
-        self.collectionView?.clipsToBounds = true
     }
     
     public func set(poke: Pokemon?)
@@ -133,10 +118,9 @@ class MoreInfoViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath)
     {
-        // TODO: Load move description
-        // move URL > effect entries > effect
         var url = ""
         switch selection {
             case .moves:

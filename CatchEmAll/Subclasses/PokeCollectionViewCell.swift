@@ -18,29 +18,24 @@ class PokecollectionViewCell: UICollectionViewCell, PokePIDelegate
     var poke: Pokemon?
     var requestHandler: PokePIRequestHandler?
     
+    
     // Set the pokemon details for this cell //
     public func update(base: PokeBase)
     {
-        self.imageView?.layer.cornerRadius = 8.0
-        self.imageView?.layer.borderWidth = 1.0
-        self.imageView?.layer.borderColor = UIColor.black.cgColor
-        self.imageView?.clipsToBounds = true
-        
         // No need to reload this cell if it's being set to the same pokemon that it already is
         if(base.name == self.base?.name)
         {
             return
         }
+        
+        self.imageView?.image = UIImage(named: "no-image")
         self.base = base
         
         nameLabel?.text = base.name.uppercased()
         
-        DispatchQueue.main.async {
-            self.mainContentView?.layer.cornerRadius = 7
-        }
-        
         requestHandler = PokePIRequestHandler(delegate: self)
-        requestHandler?.makeRequest(url: base.url)
+        requestHandler?.makeRequest(url: base.url,
+                                    requestType: .url)
     }
     
     func requestSuccess(response: Data,

@@ -26,15 +26,14 @@ class RequestDetailsHandler: PokePIDelegate
         self.selection = selection
                     
         let api = PokePIRequestHandler(delegate: self)
-        print("makeRequestDetails \(url)")
-        api.makeRequest(url: url)
+        
+        api.makeRequest(url: url,
+                        requestType: .url)
     }
     
     func requestSuccess(response: Data,
                         requestType: PokePIRequestHandler.RequestType)
     {
-        // TODO: Load move description
-        // move URL > effect entries > effect
         do {
             switch self.selection
             {

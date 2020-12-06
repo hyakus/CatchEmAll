@@ -19,7 +19,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         print("request")
         let api = PokePIRequestHandler(delegate: self)
-        api.makeRequest(requestType: .fullList)
+        api.requestMainList()
+        
         let nib = UINib(nibName:"PokeCollectionViewCell",
                         bundle: .main)
         

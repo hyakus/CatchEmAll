@@ -58,19 +58,26 @@ class MoreInfoViewController: UIViewController, UICollectionViewDelegate, UIColl
     {
         if(poke != nil)
         {
-            updateTraits(poke: poke!)
+            do {
+                try updateTraits(poke: poke!)
+            }
+            catch let error as NSError
+            {
+                
+            }
+
         }
     }
     
     // Prepare the Pokemon details to update the display
-    func updateTraits(poke: Pokemon)
+    func updateTraits(poke: Pokemon) throws
     {
         self.poke = poke
         if(poke.sprites.frontDefault != "")
         {
             let imageUrl = URL(string: poke.sprites.frontDefault)!
 
-            let imageData = try! Data(contentsOf: imageUrl)
+            let imageData = try Data(contentsOf: imageUrl)
 
             let image = UIImage(data: imageData)?.resizableImage(withCapInsets: UIEdgeInsets.zero,
                                                                  resizingMode: .stretch)

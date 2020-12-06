@@ -56,7 +56,21 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     }
     
-    func requestFailed() {
+    func requestFailed()
+    {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "An Error Occured",
+                                          message: "Something went wrong. Please try again later. Thanks",
+                                          preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK",
+                                                                   comment: "Default action"),
+                                          style: .default,
+                                          handler: { _ in
+                                            
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
         
     }
 

@@ -55,6 +55,7 @@ class PokePIRequestHandler: NSObject
             guard let data = data, error == nil else {
             // Connection error
                 print("connection Error")
+                self.delegate?.requestFailed()
                 self.requestType = .none
                 return
             }
@@ -65,7 +66,7 @@ class PokePIRequestHandler: NSObject
                 {
                     // TODO: Parse JSON using object model
                     let res = String(bytes: data, encoding: .utf8)
-//                    print("res \(res ?? "nill")")
+                    print("res \(res ?? "nill")")
                     
                     if(res != nil)
                     {

@@ -61,38 +61,39 @@ class PokecollectionViewCell: UICollectionViewCell, PokePIDelegate
     
     func handleURL(response: Data)
     {
-        do {
-            let decoder = JSONDecoder()
-            let poke = try decoder.decode(Pokemon.self,
-                                             from: response)
-            self.poke = poke
-        
-            self.updateTraits(poke: poke)
-            
-            print("success")
-        }
-        catch let error as NSError
+        if(response.count > 0)
         {
-            print("error \(error.localizedDescription)")
-            requestFailed()
+            do {
+                let decoder = JSONDecoder()
+                let poke = try decoder.decode(Pokemon.self,
+                                                 from: response)
+                self.poke = poke
+            
+                try self.updateTraits(poke: poke)
+            }
+            catch let error as NSError
+            {
+                print("error \(error.localizedDescription)")
+                requestFailed()
+            }
         }
     }
     
-    func updateTraits(poke: Pokemon)
+    func updateTraits(poke: Pokemon) throws
     {
-        prepImageView(poke: poke)
+        try prepImageView(poke: poke)
         DispatchQueue.main.async {
             self.prepDimView(poke: poke)
         }
     }
     
-    func prepImageView(poke: Pokemon)
+    func prepImageView(poke: Pokemon) throws
     {
         if(poke.sprites.frontDefault != "")
         {
             let imageUrl = URL(string: poke.sprites.frontDefault)!
 
-            let imageData = try! Data(contentsOf: imageUrl)
+            let imageData = try Data(contentsOf: imageUrl)
 
             let image = UIImage(data: imageData)?.resizableImage(withCapInsets: UIEdgeInsets.zero,
                                                                  resizingMode: .stretch)

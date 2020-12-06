@@ -20,16 +20,21 @@ class AbilityGroup: Codable
     
     public func name() -> String
     {
-        return ability.name
-    }
-    
-    public func getView(viewController: UIViewController) -> AbilityView
-    {
-        let abilityView = (Bundle.main.loadNibNamed("AbilityView",
-                                                    owner: viewController,
-                                                    options: nil)![0] as? AbilityView)!
-        
-        abilityView.update(abilityGroup: self)
-        return abilityView
+        let name = ability.name
+        if(!name.contains("-"))
+        {
+            return name.prefix(1).capitalized + name.dropFirst()
+        }
+        else
+        {
+            let split = name.split(separator: "-")
+            
+            var ret = ""
+            for s in split
+            {
+                ret.append("\(s.prefix(1).capitalized + s.dropFirst()) ")
+            }
+            return ret
+        }
     }
 }

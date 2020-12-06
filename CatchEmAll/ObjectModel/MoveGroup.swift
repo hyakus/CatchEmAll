@@ -16,14 +16,24 @@ class MoveGroup: Codable
         case move, versionGroupDetails = "version_group_details"
     }
     
-    public func getView(viewController: UIViewController) -> MoveView
+    public func name() -> String
     {
-        let moveView = (Bundle.main.loadNibNamed("MoveView",
-                                                    owner: viewController,
-                                                    options: nil)![0] as? MoveView)!
-        
-        moveView.update(moveGroup: self)
-        return moveView
+        let name = move.name
+        if(!name.contains("-"))
+        {
+            return name.prefix(1).capitalized + name.dropFirst()
+        }
+        else
+        {
+            let split = name.split(separator: "-")
+            
+            var ret = ""
+            for s in split
+            {
+                ret.append("\(s.prefix(1).capitalized + s.dropFirst()) ")
+            }
+            return ret
+        }
     }
     
 }

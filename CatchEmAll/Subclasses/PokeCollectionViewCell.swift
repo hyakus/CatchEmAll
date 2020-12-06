@@ -18,13 +18,15 @@ class PokecollectionViewCell: UICollectionViewCell, PokePIDelegate
     var poke: Pokemon?
     var requestHandler: PokePIRequestHandler?
     
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    
+    // Set the pokemon details for this cell //
     public func update(base: PokeBase)
     {
+        self.imageView?.layer.cornerRadius = 8.0
+        self.imageView?.layer.borderWidth = 1.0
+        self.imageView?.layer.borderColor = UIColor.black.cgColor
+        self.imageView?.clipsToBounds = true
+        
+        // No need to reload this cell if it's being set to the same pokemon that it already is
         if(base.name == self.base?.name)
         {
             return
@@ -39,7 +41,6 @@ class PokecollectionViewCell: UICollectionViewCell, PokePIDelegate
         
         requestHandler = PokePIRequestHandler(delegate: self)
         requestHandler?.makeRequest(url: base.url)
-        
     }
     
     func requestSuccess(response: Data,
@@ -79,32 +80,42 @@ class PokecollectionViewCell: UICollectionViewCell, PokePIDelegate
     
     func updateTraits(poke: Pokemon)
     {
+        prepImageView(poke: poke)
+        DispatchQueue.main.async {
+            self.prepDimView(poke: poke)
+        }
+    }
+    
+    func prepImageView(poke: Pokemon)
+    {
         if(poke.sprites.frontDefault != "")
         {
             let imageUrl = URL(string: poke.sprites.frontDefault)!
 
             let imageData = try! Data(contentsOf: imageUrl)
 
-            let image = UIImage(data: imageData)
+            let image = UIImage(data: imageData)?.resizableImage(withCapInsets: UIEdgeInsets.zero,
+                                                                 resizingMode: .stretch)
             
             DispatchQueue.main.async {
                 self.imageView?.image = image
             }
         }
-        
-        DispatchQueue.main.async {
-            let alreadyAdded = self.detailsStackView?.arrangedSubviews
-                .filter({ ($0 as? DimView) != nil })
-                    
-            if(alreadyAdded?.count == 0)
-            {
-                self.addDimensionsView(poke: poke)
-            }
-            else
-            {
-                let dimView = alreadyAdded?[0] as? DimView
-                dimView?.update(height: poke.height, weight: poke.weight)
-            }
+    }
+    
+    func prepDimView(poke: Pokemon)
+    {
+        let alreadyAdded = self.detailsStackView?.arrangedSubviews
+            .filter({ ($0 as? DimView) != nil })
+                
+        if(alreadyAdded?.count == 0)
+        {
+            self.addDimensionsView(poke: poke)
+        }
+        else
+        {
+            let dimView = alreadyAdded?[0] as? DimView
+            dimView?.update(height: poke.height, weight: poke.weight)
         }
     }
     

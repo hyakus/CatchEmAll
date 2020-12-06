@@ -11,6 +11,7 @@ protocol PokePIDelegate {
     func requestSuccess(response: Data, requestType: PokePIRequestHandler.RequestType)
     func requestFailed()
 }
+
 class PokePIRequestHandler: NSObject
 {
     private static let listURL = "https://pokeapi.co/api/v2/pokemon/"
@@ -21,7 +22,6 @@ class PokePIRequestHandler: NSObject
     {
         case fullList
         case url
-        case image
         case none
     }
     
@@ -61,46 +61,6 @@ class PokePIRequestHandler: NSObject
             
             if let httpStatus = response as? HTTPURLResponse {
                 print("res a \(httpStatus.statusCode)")
-                if httpStatus.statusCode == 200
-                {
-                    // TODO: Parse JSON using object model
-                    let res = String(bytes: data, encoding: .utf8)
-//                    print("res \(res ?? "nill")")
-                    
-                    if(res != nil)
-                    {
-                        self.delegate?.requestSuccess(response: data,
-                                                      requestType: self.requestType)
-                    }
-//                    let responseJSON: NSDictionary = try JSONSerialization.jsonObject(with: data,
-//                                                                                      options: .allowFragments) as! NSDictionary
-                }
-            }
-            
-            self.requestType = .none
-        }
-        task.resume()
-        
-    }
-    
-    // Request is of an image type
-    func makeRequest(imageURL: String)
-    {
-        self.requestType = .image
-        let url = URL(string: imageURL)
-        var request = URLRequest(url: url!)
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-            // Connection error
-                print("connection Error")
-                self.requestType = .none
-                return
-            }
-            
-            if let httpStatus = response as? HTTPURLResponse {
-                print("res img \(httpStatus.statusCode)")
                 if httpStatus.statusCode == 200
                 {
                     // TODO: Parse JSON using object model

@@ -27,6 +27,10 @@
 		9318697E2578264100EAA364 /* AbilityGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9318697D2578264100EAA364 /* AbilityGroup.swift */; };
 		9318698E2578393300EAA364 /* PokeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9318698D2578393300EAA364 /* PokeCollectionViewCell.swift */; };
 		931869932578398C00EAA364 /* PokeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 931869922578398C00EAA364 /* PokeCollectionViewCell.xib */; };
+		931D4607257CEF230079FF6D /* RequestDetailsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931D4606257CEF230079FF6D /* RequestDetailsHandler.swift */; };
+		931D460F257CF4380079FF6D /* MoveDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931D460E257CF4380079FF6D /* MoveDetails.swift */; };
+		931D4614257CF45B0079FF6D /* EffectEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931D4613257CF45B0079FF6D /* EffectEntry.swift */; };
+		931D461C257CF76A0079FF6D /* AbilityDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931D461B257CF76A0079FF6D /* AbilityDetails.swift */; };
 		93211CA1257A90DB0095A566 /* MoveGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93211CA0257A90DB0095A566 /* MoveGroup.swift */; };
 		93211CA9257A912E0095A566 /* VersionGroupDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93211CA8257A912E0095A566 /* VersionGroupDetails.swift */; };
 		93397025257AB2E900959F6B /* DimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93397024257AB2E900959F6B /* DimView.swift */; };
@@ -35,10 +39,6 @@
 		93397040257AC7AB00959F6B /* SmallAlertTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9339703F257AC7AB00959F6B /* SmallAlertTransitioningDelegate.swift */; };
 		93397046257AC82200959F6B /* SmallAlertPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93397044257AC82200959F6B /* SmallAlertPresentationController.swift */; };
 		93397047257AC82200959F6B /* SmallAlertPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93397045257AC82200959F6B /* SmallAlertPresentationAnimator.swift */; };
-		93397050257ACDFD00959F6B /* AbilityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9339704E257ACDFD00959F6B /* AbilityView.xib */; };
-		93397051257ACDFD00959F6B /* AbilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9339704F257ACDFD00959F6B /* AbilityView.swift */; };
-		93397063257AD43C00959F6B /* MoveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93397061257AD43C00959F6B /* MoveView.xib */; };
-		93397064257AD43C00959F6B /* MoveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93397062257AD43C00959F6B /* MoveView.swift */; };
 		937C6D0A257ADDE2004FD501 /* MoveCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937C6D09257ADDE2004FD501 /* MoveCollectionViewCell.swift */; };
 		937C6D0F257ADDF3004FD501 /* MoveCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 937C6D0E257ADDF3004FD501 /* MoveCollectionViewCell.xib */; };
 		93F72D7A257990E60061F848 /* PokeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F72D79257990E60061F848 /* PokeResponse.swift */; };
@@ -90,6 +90,10 @@
 		9318697D2578264100EAA364 /* AbilityGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityGroup.swift; sourceTree = "<group>"; };
 		9318698D2578393300EAA364 /* PokeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeCollectionViewCell.swift; sourceTree = "<group>"; };
 		931869922578398C00EAA364 /* PokeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokeCollectionViewCell.xib; sourceTree = "<group>"; };
+		931D4606257CEF230079FF6D /* RequestDetailsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailsHandler.swift; sourceTree = "<group>"; };
+		931D460E257CF4380079FF6D /* MoveDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveDetails.swift; sourceTree = "<group>"; };
+		931D4613257CF45B0079FF6D /* EffectEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectEntry.swift; sourceTree = "<group>"; };
+		931D461B257CF76A0079FF6D /* AbilityDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityDetails.swift; sourceTree = "<group>"; };
 		93211CA0257A90DB0095A566 /* MoveGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveGroup.swift; sourceTree = "<group>"; };
 		93211CA8257A912E0095A566 /* VersionGroupDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionGroupDetails.swift; sourceTree = "<group>"; };
 		93397024257AB2E900959F6B /* DimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimView.swift; sourceTree = "<group>"; };
@@ -98,10 +102,6 @@
 		9339703F257AC7AB00959F6B /* SmallAlertTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallAlertTransitioningDelegate.swift; sourceTree = "<group>"; };
 		93397044257AC82200959F6B /* SmallAlertPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallAlertPresentationController.swift; sourceTree = "<group>"; };
 		93397045257AC82200959F6B /* SmallAlertPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallAlertPresentationAnimator.swift; sourceTree = "<group>"; };
-		9339704E257ACDFD00959F6B /* AbilityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AbilityView.xib; sourceTree = "<group>"; };
-		9339704F257ACDFD00959F6B /* AbilityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbilityView.swift; sourceTree = "<group>"; };
-		93397061257AD43C00959F6B /* MoveView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoveView.xib; sourceTree = "<group>"; };
-		93397062257AD43C00959F6B /* MoveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveView.swift; sourceTree = "<group>"; };
 		937C6D09257ADDE2004FD501 /* MoveCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveCollectionViewCell.swift; sourceTree = "<group>"; };
 		937C6D0E257ADDF3004FD501 /* MoveCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoveCollectionViewCell.xib; sourceTree = "<group>"; };
 		93F72D79257990E60061F848 /* PokeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeResponse.swift; sourceTree = "<group>"; };
@@ -157,6 +157,7 @@
 		931868FF25781D0A00EAA364 /* CatchEmAll */ = {
 			isa = PBXGroup;
 			children = (
+				931D4605257CEEDE0079FF6D /* Network */,
 				9318693825781DAD00EAA364 /* Subclasses */,
 				9318693725781DA400EAA364 /* ObjectModel */,
 				9318693625781D9C00EAA364 /* ViewControllers */,
@@ -166,7 +167,6 @@
 				9318690E25781D0B00EAA364 /* LaunchScreen.storyboard */,
 				9318691125781D0B00EAA364 /* Info.plist */,
 				9318690925781D0A00EAA364 /* CatchEmAll.xcdatamodeld */,
-				93161629257976580052A9C0 /* PokePIRequestHandler.swift */,
 			);
 			path = CatchEmAll;
 			sourceTree = "<group>";
@@ -215,6 +215,9 @@
 				93F72D892579984A0061F848 /* VersionDetails.swift */,
 				93211CA8257A912E0095A566 /* VersionGroupDetails.swift */,
 				93211CA0257A90DB0095A566 /* MoveGroup.swift */,
+				931D460E257CF4380079FF6D /* MoveDetails.swift */,
+				931D4613257CF45B0079FF6D /* EffectEntry.swift */,
+				931D461B257CF76A0079FF6D /* AbilityDetails.swift */,
 			);
 			path = ObjectModel;
 			sourceTree = "<group>";
@@ -227,16 +230,21 @@
 				9339703F257AC7AB00959F6B /* SmallAlertTransitioningDelegate.swift */,
 				9318698D2578393300EAA364 /* PokeCollectionViewCell.swift */,
 				931869922578398C00EAA364 /* PokeCollectionViewCell.xib */,
-				9339704F257ACDFD00959F6B /* AbilityView.swift */,
-				9339704E257ACDFD00959F6B /* AbilityView.xib */,
-				93397062257AD43C00959F6B /* MoveView.swift */,
-				93397061257AD43C00959F6B /* MoveView.xib */,
 				93397024257AB2E900959F6B /* DimView.swift */,
 				93397029257AB35B00959F6B /* DimView.xib */,
 				937C6D09257ADDE2004FD501 /* MoveCollectionViewCell.swift */,
 				937C6D0E257ADDF3004FD501 /* MoveCollectionViewCell.xib */,
 			);
 			path = Subclasses;
+			sourceTree = "<group>";
+		};
+		931D4605257CEEDE0079FF6D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				93161629257976580052A9C0 /* PokePIRequestHandler.swift */,
+				931D4606257CEF230079FF6D /* RequestDetailsHandler.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,8 +356,6 @@
 				9318690D25781D0B00EAA364 /* Assets.xcassets in Resources */,
 				9339702A257AB35B00959F6B /* DimView.xib in Resources */,
 				9318690825781D0A00EAA364 /* Main.storyboard in Resources */,
-				93397063257AD43C00959F6B /* MoveView.xib in Resources */,
-				93397050257ACDFD00959F6B /* AbilityView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,18 +381,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				9316162A257976580052A9C0 /* PokePIRequestHandler.swift in Sources */,
+				931D4607257CEF230079FF6D /* RequestDetailsHandler.swift in Sources */,
 				9318698E2578393300EAA364 /* PokeCollectionViewCell.swift in Sources */,
 				9318693A25781DD500EAA364 /* Pokemon.swift in Sources */,
 				93397038257AC6BB00959F6B /* MoreInfoViewController.swift in Sources */,
 				9318695E2578244800EAA364 /* Sprite.swift in Sources */,
 				93397040257AC7AB00959F6B /* SmallAlertTransitioningDelegate.swift in Sources */,
 				9318694E257823D800EAA364 /* Encounter.swift in Sources */,
+				931D460F257CF4380079FF6D /* MoveDetails.swift in Sources */,
 				9318690525781D0A00EAA364 /* MainViewController.swift in Sources */,
 				93F72D85257998170061F848 /* HeldItem.swift in Sources */,
 				93211CA9257A912E0095A566 /* VersionGroupDetails.swift in Sources */,
+				931D4614257CF45B0079FF6D /* EffectEntry.swift in Sources */,
 				9318697E2578264100EAA364 /* AbilityGroup.swift in Sources */,
-				93397064257AD43C00959F6B /* MoveView.swift in Sources */,
 				93397025257AB2E900959F6B /* DimView.swift in Sources */,
+				931D461C257CF76A0079FF6D /* AbilityDetails.swift in Sources */,
 				937C6D0A257ADDE2004FD501 /* MoveCollectionViewCell.swift in Sources */,
 				9318690B25781D0A00EAA364 /* CatchEmAll.xcdatamodeld in Sources */,
 				9318693F25781E7400EAA364 /* PokeBase.swift in Sources */,
@@ -396,7 +405,6 @@
 				931869492578236400EAA364 /* GameIndices.swift in Sources */,
 				93F72D8A2579984A0061F848 /* VersionDetails.swift in Sources */,
 				931869632578247700EAA364 /* StatsGroup.swift in Sources */,
-				93397051257ACDFD00959F6B /* AbilityView.swift in Sources */,
 				93397046257AC82200959F6B /* SmallAlertPresentationController.swift in Sources */,
 				9318690125781D0A00EAA364 /* AppDelegate.swift in Sources */,
 				9318690325781D0A00EAA364 /* SceneDelegate.swift in Sources */,
@@ -577,11 +585,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				INFOPLIST_FILE = CatchEmAll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.spotlight.CatchEmAll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -595,11 +605,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 4;
 				INFOPLIST_FILE = CatchEmAll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.spotlight.CatchEmAll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -36,9 +36,9 @@
 		93397025257AB2E900959F6B /* DimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93397024257AB2E900959F6B /* DimView.swift */; };
 		9339702A257AB35B00959F6B /* DimView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93397029257AB35B00959F6B /* DimView.xib */; };
 		93397038257AC6BB00959F6B /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93397037257AC6BB00959F6B /* MoreInfoViewController.swift */; };
-		93397040257AC7AB00959F6B /* SmallAlertTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9339703F257AC7AB00959F6B /* SmallAlertTransitioningDelegate.swift */; };
-		93397046257AC82200959F6B /* SmallAlertPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93397044257AC82200959F6B /* SmallAlertPresentationController.swift */; };
-		93397047257AC82200959F6B /* SmallAlertPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93397045257AC82200959F6B /* SmallAlertPresentationAnimator.swift */; };
+		93397040257AC7AB00959F6B /* SmallTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9339703F257AC7AB00959F6B /* SmallTransitioningDelegate.swift */; };
+		93397046257AC82200959F6B /* SmallPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93397044257AC82200959F6B /* SmallPresentationController.swift */; };
+		93397047257AC82200959F6B /* SmallPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93397045257AC82200959F6B /* SmallPresentationAnimator.swift */; };
 		937C6D0A257ADDE2004FD501 /* MoveCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937C6D09257ADDE2004FD501 /* MoveCollectionViewCell.swift */; };
 		937C6D0F257ADDF3004FD501 /* MoveCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 937C6D0E257ADDF3004FD501 /* MoveCollectionViewCell.xib */; };
 		93F72D7A257990E60061F848 /* PokeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F72D79257990E60061F848 /* PokeResponse.swift */; };
@@ -99,9 +99,9 @@
 		93397024257AB2E900959F6B /* DimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimView.swift; sourceTree = "<group>"; };
 		93397029257AB35B00959F6B /* DimView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DimView.xib; sourceTree = "<group>"; };
 		93397037257AC6BB00959F6B /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
-		9339703F257AC7AB00959F6B /* SmallAlertTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallAlertTransitioningDelegate.swift; sourceTree = "<group>"; };
-		93397044257AC82200959F6B /* SmallAlertPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallAlertPresentationController.swift; sourceTree = "<group>"; };
-		93397045257AC82200959F6B /* SmallAlertPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallAlertPresentationAnimator.swift; sourceTree = "<group>"; };
+		9339703F257AC7AB00959F6B /* SmallTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallTransitioningDelegate.swift; sourceTree = "<group>"; };
+		93397044257AC82200959F6B /* SmallPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallPresentationController.swift; sourceTree = "<group>"; };
+		93397045257AC82200959F6B /* SmallPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallPresentationAnimator.swift; sourceTree = "<group>"; };
 		937C6D09257ADDE2004FD501 /* MoveCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveCollectionViewCell.swift; sourceTree = "<group>"; };
 		937C6D0E257ADDF3004FD501 /* MoveCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoveCollectionViewCell.xib; sourceTree = "<group>"; };
 		93F72D79257990E60061F848 /* PokeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeResponse.swift; sourceTree = "<group>"; };
@@ -225,9 +225,9 @@
 		9318693825781DAD00EAA364 /* Subclasses */ = {
 			isa = PBXGroup;
 			children = (
-				93397045257AC82200959F6B /* SmallAlertPresentationAnimator.swift */,
-				93397044257AC82200959F6B /* SmallAlertPresentationController.swift */,
-				9339703F257AC7AB00959F6B /* SmallAlertTransitioningDelegate.swift */,
+				93397045257AC82200959F6B /* SmallPresentationAnimator.swift */,
+				93397044257AC82200959F6B /* SmallPresentationController.swift */,
+				9339703F257AC7AB00959F6B /* SmallTransitioningDelegate.swift */,
 				9318698D2578393300EAA364 /* PokeCollectionViewCell.swift */,
 				931869922578398C00EAA364 /* PokeCollectionViewCell.xib */,
 				93397024257AB2E900959F6B /* DimView.swift */,
@@ -386,7 +386,7 @@
 				9318693A25781DD500EAA364 /* Pokemon.swift in Sources */,
 				93397038257AC6BB00959F6B /* MoreInfoViewController.swift in Sources */,
 				9318695E2578244800EAA364 /* Sprite.swift in Sources */,
-				93397040257AC7AB00959F6B /* SmallAlertTransitioningDelegate.swift in Sources */,
+				93397040257AC7AB00959F6B /* SmallTransitioningDelegate.swift in Sources */,
 				9318694E257823D800EAA364 /* Encounter.swift in Sources */,
 				931D460F257CF4380079FF6D /* MoveDetails.swift in Sources */,
 				9318690525781D0A00EAA364 /* MainViewController.swift in Sources */,
@@ -400,12 +400,12 @@
 				9318690B25781D0A00EAA364 /* CatchEmAll.xcdatamodeld in Sources */,
 				9318693F25781E7400EAA364 /* PokeBase.swift in Sources */,
 				931869712578254C00EAA364 /* TypeGroup.swift in Sources */,
-				93397047257AC82200959F6B /* SmallAlertPresentationAnimator.swift in Sources */,
+				93397047257AC82200959F6B /* SmallPresentationAnimator.swift in Sources */,
 				93211CA1257A90DB0095A566 /* MoveGroup.swift in Sources */,
 				931869492578236400EAA364 /* GameIndices.swift in Sources */,
 				93F72D8A2579984A0061F848 /* VersionDetails.swift in Sources */,
 				931869632578247700EAA364 /* StatsGroup.swift in Sources */,
-				93397046257AC82200959F6B /* SmallAlertPresentationController.swift in Sources */,
+				93397046257AC82200959F6B /* SmallPresentationController.swift in Sources */,
 				9318690125781D0A00EAA364 /* AppDelegate.swift in Sources */,
 				9318690325781D0A00EAA364 /* SceneDelegate.swift in Sources */,
 				93F72D7A257990E60061F848 /* PokeResponse.swift in Sources */,

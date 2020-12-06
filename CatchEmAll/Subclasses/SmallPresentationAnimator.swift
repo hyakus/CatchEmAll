@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SmallAlertPresentationAnimator: NSObject, UIViewControllerAnimatedTransitioning
+class SmallPresentationAnimator: NSObject, UIViewControllerAnimatedTransitioning
 {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval
     {

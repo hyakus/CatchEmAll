@@ -109,7 +109,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let moreInfoVC = storyBoard.instantiateViewController(withIdentifier: "moreInfoViewController") as? MoreInfoViewController
         
         moreInfoVC?.set(poke: cell?.poke)
-        let transitionDelegate = SmallAlertTransitioningDelegate()
+        let transitionDelegate = SmallTransitioningDelegate()
         moreInfoVC?.transitioningDelegate = transitionDelegate
         moreInfoVC?.modalPresentationStyle = .custom
         self.present(moreInfoVC!, animated: true, completion: nil)

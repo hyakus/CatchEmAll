@@ -15,7 +15,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var collectionView: UICollectionView?
     var pokeBases = [PokeBase]()
     var filterPokeBases = [PokeBase]()
-    var searchText = ""
     
     // UIViewController //
     override func viewDidLoad() {
@@ -132,7 +131,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     // UISearchBarDelegate - Filter Pokémon by name on search //
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.searchText = searchText
         
         print(searchText)
         if(searchText == "")

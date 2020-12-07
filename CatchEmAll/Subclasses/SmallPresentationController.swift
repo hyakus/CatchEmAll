@@ -37,23 +37,10 @@ class SmallPresentationController: UIPresentationController
     
     override var frameOfPresentedViewInContainerView: CGRect
     {
-        
-        if (UI_USER_INTERFACE_IDIOM() == .phone)
-        {
             return CGRect(origin: CGPoint(x: self.containerView!.frame.width/12,
                                           y: (self.containerView!.frame.height/8)),
                           size: CGSize(width: self.containerView!.frame.width/1.2,
                                        height: self.containerView!.frame.height/1.5))
-
-        }
-        else
-        {
-            return CGRect(origin: CGPoint(x: self.containerView!.frame.width/3,
-                            y: (self.containerView!.frame.height/4)),
-            size: CGSize(width: self.containerView!.frame.width/3,
-                         height: self.containerView!.frame.height/6))
-
-        }
     }
     
     override func dismissalTransitionWillBegin()

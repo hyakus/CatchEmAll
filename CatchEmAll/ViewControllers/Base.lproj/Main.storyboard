@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="COG-AP-Kbn">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GE1-xq-fiO">
                                     <size key="itemSize" width="128" height="128"/>
@@ -41,23 +41,38 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="feD-tn-BJ4"/>
                                 </connections>
                             </collectionView>
+                            <searchBar contentMode="redraw" placeholder="Search Pokémon" translatesAutoresizingMaskIntoConstraints="NO" id="Iyp-UV-QBn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="lBi-gH-RFN"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="t1H-F9-hk9"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="COG-AP-Kbn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WWo-u4-aph"/>
+                            <constraint firstItem="COG-AP-Kbn" firstAttribute="top" secondItem="Iyp-UV-QBn" secondAttribute="bottom" id="Txe-KQ-Byg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="COG-AP-Kbn" secondAttribute="bottom" id="Xat-i8-gDB"/>
+                            <constraint firstItem="Iyp-UV-QBn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cuE-r0-dus"/>
                             <constraint firstItem="COG-AP-Kbn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dhi-d9-fZE"/>
+                            <constraint firstItem="Iyp-UV-QBn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fAI-Od-xP6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="COG-AP-Kbn" secondAttribute="trailing" id="rQM-qr-Git"/>
+                            <constraint firstItem="Iyp-UV-QBn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="x47-rJ-hkJ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="COG-AP-Kbn" id="9eU-Tp-B3P"/>
+                        <outlet property="searchBar" destination="Iyp-UV-QBn" id="hyV-l0-QIp"/>
+                        <outlet property="searchBarHeightConstraint" destination="lBi-gH-RFN" id="6UE-cO-Cxq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="89"/>
+            <point key="canvasLocation" x="137.68115942028987" y="88.392857142857139"/>
         </scene>
         <!--More Info View Controller-->
         <scene sceneID="S1x-pA-Vsb">

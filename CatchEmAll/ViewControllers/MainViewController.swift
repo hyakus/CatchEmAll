@@ -7,11 +7,15 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, PokePIDelegate
+class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, PokePIDelegate, UISearchBarDelegate
 {
     
+    @IBOutlet weak var searchBar: UISearchBar?
+    @IBOutlet weak var searchBarHeightConstraint: NSLayoutConstraint?
     @IBOutlet weak var collectionView: UICollectionView?
     var pokeBases = [PokeBase]()
+    var filterPokeBases = [PokeBase]()
+    var searchText = ""
     
     // UIViewController //
     override func viewDidLoad() {
@@ -44,6 +48,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 print("base \(base.name) \(base.url)")
             }
             self.pokeBases = pokeRes.results
+            self.filterPokeBases = pokeRes.results
             
             DispatchQueue.main.async {
                 self.collectionView?.reloadData()
@@ -79,8 +84,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int
     {
-        print("count \(self.pokeBases.count)")
-        return self.pokeBases.count
+        print("count \(self.filterPokeBases.count)")
+        return self.filterPokeBases.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -89,7 +94,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pokeCollectionViewCell",
                                                       for: indexPath) as? PokecollectionViewCell
         
-        cell?.update(base: self.pokeBases[indexPath.row])
+        cell?.update(base: self.filterPokeBases[indexPath.row])
         
         return cell!
     }
@@ -123,6 +128,57 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                         sizeForItemAt indexPath: IndexPath) -> CGSize
     {
         return CGSize.init(width: collectionView.frame.width, height: 120)
+    }
+    
+    // UISearchBarDelegate - Filter Pokémon by name on search //
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.searchText = searchText
+        
+        print(searchText)
+        if(searchText == "")
+        {
+            self.filterPokeBases = self.pokeBases
+        }
+        else
+        {
+            for p in filterPokeBases
+            {
+                print(p.name)
+            }
+            self.filterPokeBases = self.filterPokeBases.filter({$0.name.localizedCaseInsensitiveContains(searchText)})
+            
+            print(self.filterPokeBases.count)
+        }
+    
+        DispatchQueue.main.async {
+            self.collectionView?.reloadData()
+        }
+    }
+    
+    // UIScrollViewDelegate - Hide/ show search bar on scroll //
+    private var lastContentOffset: CGFloat = 0
+
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView)
+    {
+       lastContentOffset = scrollView.contentOffset.y
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView)
+    {
+        if lastContentOffset > scrollView.contentOffset.y
+        {
+            UIView.animate(withDuration: 0.25,
+                           animations: { [weak self] in
+                self?.searchBarHeightConstraint?.constant = 50
+            }, completion: nil)
+        }
+        else if lastContentOffset < scrollView.contentOffset.y
+        {
+            UIView.animate(withDuration: 0.25,
+                           animations: { [weak self] in
+                self?.searchBarHeightConstraint?.constant = 0
+            }, completion: nil)
+        }
     }
 }
 

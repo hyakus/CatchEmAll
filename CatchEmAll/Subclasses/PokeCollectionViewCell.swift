@@ -42,8 +42,8 @@ class PokecollectionViewCell: UICollectionViewCell, PokePIDelegate
                         requestType: PokePIRequestHandler.RequestType)
     {
         switch requestType {
-        case .url:
-            handleURL(response: response)
+            case .url:
+                self.handleURL(response: response)
             break
         default:
             break

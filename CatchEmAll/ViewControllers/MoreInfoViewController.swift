@@ -15,6 +15,8 @@ class MoreInfoViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var collectionView: UICollectionView?
     @IBOutlet weak var pickerView: UIPickerView?
     
+    let requestHandler = RequestDetailsHandler()
+    
     var poke: Pokemon?
     
     // This enum can be used to manage the picker options and reload the collectionView according to it
@@ -37,6 +39,8 @@ class MoreInfoViewController: UIViewController, UICollectionViewDelegate, UIColl
                                       forCellWithReuseIdentifier: "moveCollectionViewCell")
         
         self.collectionView?.delegate = self
+        
+//        let handler = RequestDetailsHandler()
     }
     
     public func set(poke: Pokemon?)
@@ -135,8 +139,7 @@ class MoreInfoViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         if(url != "")
         {
-            let handler = RequestDetailsHandler()
-            handler.makeRequest(url: url,
+            requestHandler.makeRequest(url: url,
                                 selection: self.selection,
                                 delegate: self)
             

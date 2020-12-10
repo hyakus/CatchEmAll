@@ -7,17 +7,22 @@
 
 import Foundation
 
-protocol PokePIDelegate {
-    func requestSuccess(response: Data, requestType: PokePIRequestHandler.RequestType)
+protocol PokePIDelegate: AnyObject
+{
+    func requestSuccess(response: Data,
+                        requestType: PokePIRequestHandler.RequestType)
     func requestFailed()
 }
 
 class PokePIRequestHandler: NSObject
 {
     private static let listURL = "https://pokeapi.co/api/v2/pokemon/"
+    private static let kQueue = "queue"
+    weak open var delegate: PokePIDelegate?
     
-    // This enum can be used to both pair the responses with what request
-    // it relates to, and also can be used to build the URLs for the requests
+    let apiQueue = DispatchQueue(label: PokePIRequestHandler.kQueue,
+                                  qos: DispatchQoS(qosClass: .userInteractive, relativePriority: 0))
+    
     public enum RequestType
     {
         case fullList
@@ -25,28 +30,31 @@ class PokePIRequestHandler: NSObject
         case none
     }
     
-    private override init()
-    {
-        
-    }
-    
-    init(delegate: PokePIDelegate?)
+    public init(delegate: PokePIDelegate?)
     {
         self.delegate = delegate
     }
     
     var requestType: RequestType = .none
-    var delegate: PokePIDelegate?
     
     // request list of Pokemon from basic 20 Pokemon list(currently)
     func requestMainList()
     {
-        makeRequest(url: PokePIRequestHandler.listURL,
-                    requestType: .fullList)
+        self.makeRequest(url: PokePIRequestHandler.listURL,
+                         requestType: .fullList)
     }
     
-    // Request is of a URL type
     func makeRequest(url: String,
+                     requestType: RequestType)
+    {
+        
+        apiQueue.async {
+            self.performRequest(url: url,
+                        requestType: requestType)
+        }
+    }
+    
+    private func performRequest(url: String,
                      requestType: RequestType)
     {
         self.requestType = requestType
@@ -68,7 +76,7 @@ class PokePIRequestHandler: NSObject
                 if httpStatus.statusCode == 200
                 {
                     let res = String(bytes: data, encoding: .utf8)
-                    print("response as string \(res ?? "nil")")
+                    print("response as string \(res ?? "nil") \(self.delegate)")
                     
                     if(res != nil)
                     {

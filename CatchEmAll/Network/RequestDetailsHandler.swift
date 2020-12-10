@@ -7,16 +7,15 @@
 
 import Foundation
 
-protocol DetailsDelegate {
+protocol DetailsDelegate: AnyObject {
     func detailsRequestSuccess(name: String, string: String)
     func detailsRequestFailed()
 }
 
 class RequestDetailsHandler: PokePIDelegate
 {
-    var delegate: DetailsDelegate?
+    weak open var delegate: DetailsDelegate?
     var selection: MoreInfoViewController.Selection?
-
     
     func makeRequest(url: String,
                      selection: MoreInfoViewController.Selection,
@@ -26,7 +25,6 @@ class RequestDetailsHandler: PokePIDelegate
         self.selection = selection
                     
         let api = PokePIRequestHandler(delegate: self)
-        
         api.makeRequest(url: url,
                         requestType: .url)
     }
